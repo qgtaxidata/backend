@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="qgtaxidata:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>qgtaxidata</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="qgtaxidata.war">
+      <element id="artifact" artifact-name="qgtaxidata:war exploded" />
+    </root>
+  </artifact>
+</component>
