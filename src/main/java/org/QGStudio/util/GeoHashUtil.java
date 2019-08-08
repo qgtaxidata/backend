@@ -37,9 +37,7 @@ public class GeoHashUtil {
 
         public static Location geohash2Location(String geohash){
             WGS84Point wgs84Point = GeoHash.fromGeohashString(geohash).getPoint();
-            Location location = new Location();
-            location.setLatitude(wgs84Point.getLatitude());
-            location.setLongitude(wgs84Point.getLongitude());
+            Location location = GCJ02_WGS84.wgs84_To_Gcj02(wgs84Point.getLatitude(),wgs84Point.getLongitude());
             return location;
         }
 }

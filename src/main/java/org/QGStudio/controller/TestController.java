@@ -46,7 +46,7 @@ public class TestController {
         httpServletResponse.addHeader("Access-Control-Allow-Origin", "*");
         httpServletResponse.addHeader("Access-Control-Allow-Headers",
                 "origin, content-type, accept, x-requested-with, sid, mycustom, smuser");
-        httpServletResponse.addHeader("Access-Control-Allow-Methods", "*");
+        httpServletResponse.addHeader("Access-Control-Allow-Method","POST,GET");
         httpServletResponse.addHeader("Access-Control-Max-Age", "100");
         httpServletResponse.addHeader("Access-Control-Allow-Credentials","true");
         String[] strings = GeoHashUtil.findNeighborGeohash(location);
