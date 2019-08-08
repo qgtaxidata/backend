@@ -46,7 +46,7 @@ public class ParamExceptionHandler {
      * @Date : 2019-08-08
      */
     @ExceptionHandler(value = MissingServletRequestParameterException.class)
-    public ResultBean<?> missParmException(MissingServletRequestParameterException exception){
+    public ResultBean<?> missParamException(MissingServletRequestParameterException exception){
 
         throw new CheckException("参数缺失");
     }

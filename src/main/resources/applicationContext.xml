@@ -75,7 +75,7 @@
     </bean>
 
     <!-- 事务通知 -->
-    <tx:advice id="txAdvic" transaction-manager="transactionManager">
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
             <tx:method name="find*" read-only="true"/>
             <tx:method name="*" isolation="DEFAULT"/>
@@ -83,7 +83,7 @@
     </tx:advice>
     <!-- AOP增强-->
     <aop:config>
-        <aop:advisor advice-ref="txAdvic" pointcut="execution(* org.QGStudio.service.impl.*ServiceImpl.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut="execution(* org.QGStudio.service.impl.*ServiceImpl.*(..))"/>
     </aop:config>
 
 </beans>
