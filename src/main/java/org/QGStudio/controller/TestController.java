@@ -1,5 +1,6 @@
 package org.QGStudio.controller;
 
+import org.QGStudio.dtos.ResultBean;
 import org.QGStudio.model.User;
 import org.QGStudio.service.TestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class TestController {
     private TestService testService;
 
     @RequestMapping("/testUser")
-    public User testUser(@RequestParam int userId){
+    public ResultBean<?> testUser(@RequestParam int userId){
 
-        return testService.testUser(userId);
+        return new ResultBean<>(testService.testUser(userId));
     }
 }

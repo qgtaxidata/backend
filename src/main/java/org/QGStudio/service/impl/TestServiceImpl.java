@@ -22,7 +22,6 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public User testUser(int userId) {
-
         return testDao.testUser(userId);
     }
 }

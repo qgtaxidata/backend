@@ -27,13 +27,10 @@ public class ControllerAop {
 
         try {
             result = (ResultBean<?>) pjp.proceed();
-            System.out.println("切面");
 
         } catch (Throwable e) {
 
-            System.out.println("进入异常");
             result = handlerException(pjp, e);
-
         }
 
         return result;
@@ -45,16 +42,16 @@ public class ControllerAop {
         // 已知异常
         if (e instanceof CheckException) {
 
-            System.out.println("处理异常");
             result.setMsg(e.getLocalizedMessage());
             result.setCode(ResultBean.FAIL);
         } else if (e instanceof NullPointerException){
 
-            result.setMsg("参数异常");
+            result.setMsg("错误!参数不匹配");
             result.setCode(ResultBean.FAIL);
         } else {
-            //TODO 未知的异常，应该格外注意，可以发送邮件通知等
-            result.setMsg(e.toString());
+            // 未知异常
+            e.printStackTrace();
+            result.setMsg("未知异常,请稍后重试");
             result.setCode(ResultBean.FAIL);
         }
         return result;
