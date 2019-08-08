@@ -24,9 +24,9 @@
     <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
 
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/12306"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="url" value="jdbc:mysql://10.21.48.11:3306/taxilog"/>
+        <property name="username" value="qgtaxi"/>
+        <property name="password" value="qgtaxi_2018"/>
         <!-- 初始化大小-->
         <property name="initialSize" value="1"/>
         <!-- 最大连接数-->
