@@ -35,7 +35,7 @@ public class ParamExceptionHandler {
     @ExceptionHandler(value = TypeMismatchException.class)
     public ResultBean<?> requestTypeMismatch(TypeMismatchException exception){
 
-        throw new CheckException("参数缺失");
+        throw new CheckException("错误!参数不匹配");
     }
 
     /**
@@ -46,9 +46,9 @@ public class ParamExceptionHandler {
      * @Date : 2019-08-08
      */
     @ExceptionHandler(value = MissingServletRequestParameterException.class)
-    public ResultBean<?> missParmException(MissingServletRequestParameterException exception){
+    public ResultBean<?> missParamException(MissingServletRequestParameterException exception){
 
-        throw new CheckException("参数缺失");
+        throw new CheckException("错误!参数不匹配");
     }
 
     /**
@@ -61,7 +61,7 @@ public class ParamExceptionHandler {
     @ExceptionHandler(value = HttpMessageNotReadableException.class)
     public ResultBean<?> nullPointException(HttpMessageNotReadableException exception){
 
-        throw new CheckException("参数缺失");
+        throw new CheckException("错误!参数不匹配");
     }
 
 
@@ -75,7 +75,7 @@ public class ParamExceptionHandler {
     @ExceptionHandler(value = HttpMessageNotWritableException.class)
     public ResultBean<?> paramException(HttpMessageNotWritableException exception){
 
-        throw new CheckException("参数缺失");
+        throw new CheckException("错误!参数不匹配");
     }
 
     /**
@@ -88,6 +88,6 @@ public class ParamExceptionHandler {
     @ExceptionHandler(value = ConversionNotSupportedException.class)
     public ResultBean<?> paramException(ConversionNotSupportedException exception){
 
-        throw new CheckException("参数缺失");
+        throw new CheckException("错误!参数不匹配");
     }
 }
