@@ -27,6 +27,8 @@ public class TestController {
     @RequestMapping("/testUser")
     public ResultBean<?> testUser(@RequestParam int userId){
 
+        testService.TestHttpClient();
+        testService.TestHttpClient();
         return new ResultBean<>(testService.testUser(userId));
     }
 }
