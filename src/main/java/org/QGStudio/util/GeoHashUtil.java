@@ -3,6 +3,7 @@ package org.QGStudio.util;
 import ch.hsr.geohash.GeoHash;
 import ch.hsr.geohash.WGS84Point;
 import org.QGStudio.model.Location;
+import org.QGStudio.model.LocationWithHeight;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.awt.*;
@@ -35,9 +36,9 @@ public class GeoHashUtil {
             ,bottomLeft.toString(),bottomRight.toString()};
         }
 
-        public static Location geohash2Location(String geohash){
+        public static LocationWithHeight geohash2Location(String geohash){
             WGS84Point wgs84Point = GeoHash.fromGeohashString(geohash).getPoint();
-            Location location = GCJ02_WGS84.wgs84_To_Gcj02(wgs84Point.getLatitude(),wgs84Point.getLongitude());
+            LocationWithHeight location = GCJ02_WGS84.wgs84_To_Gcj02(wgs84Point.getLatitude(),wgs84Point.getLongitude());
             return location;
         }
 }

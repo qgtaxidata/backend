@@ -1,5 +1,7 @@
 package org.QGStudio.util;
 
+import org.QGStudio.model.Location;
+
 import java.util.Collection;
 
 /**
@@ -49,6 +51,12 @@ public class VerifyUtil {
         return  ( null == collection || collection.size() == 0 );
     }
 
-
+    public static boolean locationIsEmpty(Location location) {
+        if (null == location.getLongitude() || null == location.getLatitude()
+            || null == location.getTime()) {
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -2,6 +2,7 @@ package org.QGStudio.dao;
 
 
 import org.QGStudio.model.Location;
+import org.QGStudio.model.LocationWithHeight;
 import org.QGStudio.model.User;
 import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.ResultMap;
@@ -24,5 +25,5 @@ public interface TestDao {
             @Result(column = "latitude", property = "latitude"),
             @Result(column = "geohash", property = "geohash")
     })
-    List<Location> findLocation(String geohash);
+    List<LocationWithHeight> findLocation(String geohash);
 }
