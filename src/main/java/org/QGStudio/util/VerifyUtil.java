@@ -51,6 +51,13 @@ public class VerifyUtil {
         return  ( null == collection || collection.size() == 0 );
     }
 
+    /**
+     * @Description : 判断location对象的成员变量是否为空
+     * @Param : [location]
+     * @Return : boolean
+     * @Author : SheldonPeng
+     * @Date : 2019-08-09
+     */
     public static boolean locationIsEmpty(Location location) {
         if (null == location.getLongitude() || null == location.getLatitude()
             || null == location.getTime()) {
@@ -58,5 +65,7 @@ public class VerifyUtil {
         }
         return false;
     }
+
+
 
 }

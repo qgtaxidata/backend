@@ -12,7 +12,7 @@ public class DigitUtil {
     /**
      * 将经纬度的小数点位数设定为6
      */
-    public static Location checkDigit(Location location) {
+    public static Location checkLocationDigit(Location location) {
 
         String longitude = String.valueOf(location.getLongitude());
         String latitude = String.valueOf(location.getLatitude());

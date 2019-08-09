@@ -12,6 +12,7 @@ import org.springframework.beans.factory.ObjectFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -27,6 +28,7 @@ public class HotspotServiceImpl implements HotspotService {
 
     @Autowired
     private ObjectFactory<HttpClient> clientBean;
+
     /**
      * 获取热点推荐的List集合
      * @param location time
@@ -40,10 +42,18 @@ public class HotspotServiceImpl implements HotspotService {
             throw new CheckException("location的部分字段不能为空！");
         }
         //将传进来的经纬度设置为6位小数
-        location = DigitUtil.checkDigit(location);
+        location = DigitUtil.checkLocationDigit(location);
         //对time进行切割到分钟，去除秒的部分
-        location.setTime(TimeUtil.cuttingTime(location.getTime()));
+
+        try {
+            location.setTime(TimeUtil.formatTime(location.getTime()));
+        } catch (ParseException e) {
+            e.printStackTrace();
+            throw new CheckException("参数异常，请检查!");
+        }
+
         String reponse = clientBean.getObject().doPostWithParam(location);
+
         if (VerifyUtil.isEmpty(reponse)) {
             throw new CheckException("网络通讯异常！请重试！");
         }

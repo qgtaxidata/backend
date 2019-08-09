@@ -1,22 +1,29 @@
 package org.QGStudio.util;
 
+import lombok.extern.log4j.Log4j2;
+
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @description 对时间进行切割
  * @author < a href=" ">郭沛</ a>
  * @date 2019-08-08 21:36
  */
+@Log4j2
 public class TimeUtil {
 
     /**
-     * 针对数据库的Date类型的数据进行切割，得到的是去除秒的时间
+     * 对标准时间进行格式化为分钟精度的时间
      * @param time
      * @return
      */
-    public static String cuttingTime(String time) {
-        String time1 = time.split(":")[0];
-        String time2 = time.split(":")[1];
-        time = time1 + time2;
-        return time;
-    }
+    public static String formatTime(String time) throws ParseException {
 
+        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+        return dateFormat.format(dateFormat.parse(time));
+    }
 }

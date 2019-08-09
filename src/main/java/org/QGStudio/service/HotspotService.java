@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import org.QGStudio.model.Location;
 import org.springframework.stereotype.Service;
 
+import java.text.ParseException;
 import java.util.List;
 @Service
 public interface HotspotService {

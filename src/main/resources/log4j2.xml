@@ -52,6 +52,7 @@
                         <AppenderRef ref="Console" />-->
             <!-- 错误日志 -->
             <AppenderRef ref="error-log"/>
+            <AppenderRef ref="Console"/>
         </Root>
         <Root level="info">
             <AppenderRef ref="Console"/>
